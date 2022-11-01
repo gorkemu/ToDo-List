@@ -1,0 +1,1 @@
+(()=>{"use strict";function e(){document.getElementById("add-task-form-container").style.display=""}function t(){document.getElementById("add-task-form").reset(),document.getElementById("add-task-form-container").style.display="none"}document.querySelector(".add-task-button").addEventListener("click",e),document.querySelector(".cancel-button").addEventListener("click",t)})();
