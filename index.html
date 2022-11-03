@@ -12,6 +12,10 @@
         </div>
         <div class="tasks">
             <h1>Tasks</h1>
+            <div class="lists">
+                <div class="todo">
+                </div>
+            </div>
         </div>
         <div class="form">
             <button class="add-task-button">Add Task</button>
@@ -25,14 +29,13 @@
                     <input type="date" name="dueDate" id="duedate">
                     <label for="priority">Priority:</label>
                     <select name="priority" id="priority">
-                        <option value="priority1">Priority 1</option>
-                        <option value="priority2">Priority 2</option>
-                        <option value="priority3">Priority 3</option>
-                        <option value="priority4">Priority 4</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
                     </select>
                 </form>
-                <button type="submit" class="submit-button">Add</button>
-                <button type="reset" class="cancel-task-button">Cancel</button>
+                <button type="submit" class="add-button">Add</button>
+                <button type="reset" class="cancel-button">Cancel</button>
             </div>
         </div>
     </div>
