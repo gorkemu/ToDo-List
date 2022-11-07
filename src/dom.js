@@ -1,13 +1,13 @@
 export function displayForm() {
-    document.getElementById("add-task-form-container").style.display = '';
+    document.getElementById("add-todo-form-container").style.display = '';
 }
 
-export function cancelTask() {
-    document.getElementById("add-task-form").reset();
-    document.getElementById("add-task-form-container").style.display = 'none';
+export function cancelAddingTodo() {
+    document.getElementById("add-todo-form").reset();
+    document.getElementById("add-todo-form-container").style.display = 'none';
 }
 
-export function addTaskToDom(title, description, dueDate, priority) {
+export function addTodoToDom(title, description, dueDate, priority) {
     const todoList = document.querySelector(".todo");
     const newTodo = document.createElement("div");
     newTodo.classList.add("new-todo");
@@ -29,14 +29,14 @@ export function addTaskToDom(title, description, dueDate, priority) {
     taskPriority.textContent = priority;
     newTodo.appendChild(taskPriority);
 
-    const editTaskButton = document.createElement("button");
-    editTaskButton.textContent = "Edit";
-    editTaskButton.classList.add("edit-task-button");
-    newTodo.appendChild(editTaskButton);
+    const editTodoButton = document.createElement("button");
+    editTodoButton.textContent = "Edit";
+    editTodoButton.classList.add("edit-todo-button");
+    newTodo.appendChild(editTodoButton);
 
-    const deleteTaskButton = document.createElement("button");
-    deleteTaskButton.textContent = "Delete";
-    deleteTaskButton.classList.add("delete-task-button");
-    newTodo.appendChild(deleteTaskButton);
+    const deleteTodoButton = document.createElement("button");
+    deleteTodoButton.textContent = "Delete";
+    deleteTodoButton.classList.add("delete-todo-button");
+    newTodo.appendChild(deleteTodoButton);
 
 }

@@ -1,18 +1,18 @@
-import { cancelTask, displayForm } from './dom';
-import { addTask } from './todo';
+import { cancelAddingTodo, displayForm } from './dom';
+import { addTodo } from './todo';
 
 const eventListeners = (function() {
 
-    const addTaskButton = document.querySelector(".add-task-button");
-    addTaskButton.addEventListener("click", displayForm);
+    const addTodoButton = document.querySelector(".add-todo-button");
+    addTodoButton.addEventListener("click", displayForm);
 
     const cancelButton = document.querySelector(".cancel-button");
-    cancelButton.addEventListener("click", cancelTask);
+    cancelButton.addEventListener("click", cancelAddingTodo);
 
     const addButton = document.querySelector(".add-button");
-    addButton.addEventListener("click", addTask);
+    addButton.addEventListener("click", addTodo);
 
-    const deleteTaskButton = document.querySelectorAll(".delete-task-button");
+    const deleteTodoButton = document.querySelectorAll(".delete-todo-button");
     
-    const editTaskButton = document.querySelectorAll(".edit-task-button");
+    const editTodoButton = document.querySelectorAll(".edit-todo-button");
 })();
