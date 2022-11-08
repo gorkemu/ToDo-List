@@ -10,20 +10,30 @@
     <div id="content">
         <div class="projects"> 
             <h2>Projects</h2>
-            <ul class="projects-list">
-                <li class="project-name">Personal</li>
-                <li class="project-name">Work</li>
+            <ul id="projects-list">
+                <!-- <li class="project-name">Personal</li>
+                <li class="project-name">Work</li> -->
             </ul>
         </div>
-        <div class="todos">
-            <h2>To-Dos</h2>
-            <div class="todos-list">
-                <div class="todo">
-                </div>
+        <div class="form-project">
+            <button class="create-project-button">+</button>
+            <div id="new-project-form-container" style="display: none">
+                <form id="new-project-form">
+                    <label for="project-name">Name</label>
+                    <input type="text" name="project-name" id="project-name-input">
+                    <button type="submit" class="add-project-button">Add</button>
+                    <button type="reset" class="cancel-project-button">Cancel</button>
+                </form>
             </div>
         </div>
-        <div class="form">
-            <button class="add-todo-button">Add To-Do</button>
+        <div class="todos">
+            <h2>Todos</h2>
+            <h3 class="project-header">Personal</h3>
+            <div class="todos-list">
+            </div>
+        </div>
+        <div class="form-todo">
+            <button class="create-todo-button">+</button>
             <div id="add-todo-form-container" style="display: none">
                 <form id="add-todo-form">
                     <label for="title">Title</label>
@@ -38,9 +48,9 @@
                         <option value="Medium">Medium</option>
                         <option value="Low">Low</option>
                     </select>
+                    <button type="submit" class="add-todo-button">Add</button>
+                    <button type="reset" class="cancel-todo-button">Cancel</button>
                 </form>
-                <button type="submit" class="add-button">Add</button>
-                <button type="reset" class="cancel-button">Cancel</button>
             </div>
         </div>
     </div>
