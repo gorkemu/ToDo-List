@@ -1,5 +1,5 @@
 import { displayProjectForm, displayTaskForm, resetProjectForm, resetTodoForm } from './dom';
-import { createProject, renderProjects } from './projects';
+import { createProject, deleteProject, renderProjects, selectProject } from './projects';
 import { addTodo } from './todos';
 
 const eventListeners = (() => {
@@ -16,6 +16,13 @@ const eventListeners = (() => {
         createProject();
     });
 
+    // Select Project
+    const projectsContainer = document.querySelector('#projects-list');
+    projectsContainer.addEventListener("click", e => selectProject(e));
+    
+    // Delete Project
+    projectsContainer.addEventListener("click", e => deleteProject(e));
+  
     const createTodoButton = document.querySelector(".create-todo-button");
     createTodoButton.addEventListener("click", displayTaskForm);
 
@@ -33,4 +40,4 @@ const eventListeners = (() => {
     const editTodoButton = document.querySelectorAll(".edit-todo-button");
 })();
 
-// renderProjects();
+renderProjects();
