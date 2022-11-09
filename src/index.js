@@ -1,5 +1,5 @@
-import { displayProjectForm, displayTaskForm, resetProjectForm, resetTodoForm } from './dom';
-import { createProject, deleteProject, renderProjects, selectProject } from './projects';
+import { displayProjectForm, displayTaskForm, render, resetProjectForm, resetTodoForm } from './dom';
+import { changeSelectedProject, createProject, deleteProject, getSelectedProjectId, noSelectedProject } from './projects';
 import { addTodo } from './todos';
 
 const eventListeners = (() => {
@@ -15,13 +15,22 @@ const eventListeners = (() => {
         e.preventDefault();
         createProject();
     });
-
-    // Select Project
+   
     const projectsContainer = document.querySelector('#projects-list');
-    projectsContainer.addEventListener("click", e => selectProject(e));
-    
-    // Delete Project
-    projectsContainer.addEventListener("click", e => deleteProject(e));
+    projectsContainer.addEventListener("click", e => {
+        // Change Selected Project
+        if (e.target.classList.contains('project-name')) {
+            changeSelectedProject(e.target.dataset.projectId);
+        }
+        // Delete Project
+        else if (e.target.classList.contains('delete-project-button')) {
+            deleteProject(e.target.parentElement.dataset.projectId);
+            
+            if(e.target.parentElement.dataset.projectId === getSelectedProjectId()) {
+                noSelectedProject();
+            }
+        }
+    });
   
     const createTodoButton = document.querySelector(".create-todo-button");
     createTodoButton.addEventListener("click", displayTaskForm);
@@ -40,4 +49,4 @@ const eventListeners = (() => {
     const editTodoButton = document.querySelectorAll(".edit-todo-button");
 })();
 
-renderProjects();
+render();
