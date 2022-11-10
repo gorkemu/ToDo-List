@@ -1,5 +1,5 @@
 import { displayProjectForm, displayTaskForm, render, resetProjectForm, resetTodoForm } from './dom';
-import { changeSelectedProject, createProject, deleteProject, getSelectedProjectId, noSelectedProject } from './projects';
+import { changeSelectedProject, createProject, deleteProject, deleteTodoFromProject, getSelectedProjectId, noSelectedProject } from './projects';
 import { addTodo } from './todos';
 
 const eventListeners = (() => {
@@ -18,14 +18,12 @@ const eventListeners = (() => {
    
     const projectsContainer = document.querySelector('#projects-list');
     projectsContainer.addEventListener("click", e => {
-        // Change Selected Project
         if (e.target.classList.contains('project-name')) {
             changeSelectedProject(e.target.dataset.projectId);
         }
-        // Delete Project
         else if (e.target.classList.contains('delete-project-button')) {
             deleteProject(e.target.parentElement.dataset.projectId);
-            
+
             if(e.target.parentElement.dataset.projectId === getSelectedProjectId()) {
                 noSelectedProject();
             }
@@ -44,7 +42,13 @@ const eventListeners = (() => {
         addTodo();
     });
 
-    const deleteTodoButton = document.querySelectorAll(".delete-todo-button");
+    const todosContainer = document. querySelector("#todos-list");
+    todosContainer.addEventListener('click', e => {
+        if (e.target.classList.contains("delete-todo-button")) {
+            deleteTodoFromProject(e.target.parentElement.dataset.todoId);
+        }
+    });
+
     
     const editTodoButton = document.querySelectorAll(".edit-todo-button");
 })();

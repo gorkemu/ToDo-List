@@ -1,4 +1,9 @@
-import { getProjects, getSelectedProjectId, save } from "./projects";
+import { getProjects, getSelectedProjectId, getTodos, save } from "./projects";
+
+const projectsContainer = document.querySelector('#projects-list');
+const todosContainer = document.querySelector('.todos-container');
+const projectHeader = document.querySelector('.project-header');
+const todosList = document.querySelector('#todos-list');
 
 export function displayTaskForm() {
     document.getElementById("add-todo-form-container").style.display = '';
@@ -23,8 +28,6 @@ export function clearElement(element) {
     }
 }
 
-const projectsContainer = document.querySelector('#projects-list');
-
 export function renderProjects() {
     getProjects().forEach(project => {
         const projectElement = document.createElement('div');
@@ -45,11 +48,6 @@ export function renderProjects() {
     });
 }
 
-const todosContainer = document.querySelector('.todos-container');
-const projectHeader = document.querySelector('.project-header');
-const todosList = document.querySelector('.todos-list');
-
-
 export function render() {
     clearElement(projectsContainer);
     renderProjects();
@@ -59,7 +57,8 @@ export function render() {
     } else {
         todosContainer.style.display = '';
         projectHeader.textContent = selectedProject.name;
-        // clearElement(todosContainer);
+        clearElement(todosList);
+        renderTodos(selectedProject);
     }
 };
 
@@ -67,3 +66,38 @@ export function saveAndRender() {
     save();
     render();   
 }
+
+export function renderTodos(selectedProject) {
+    getTodos(selectedProject).forEach(todo => {
+        const newTodo = document.createElement("div");
+        newTodo.dataset.todoId = todo.id;
+        newTodo.classList.add("new-todo");
+        todosList.appendChild(newTodo);
+
+        const todoTitle = document.createElement("p");
+        todoTitle.classList.add("todo-title");
+        todoTitle.textContent = todo.title;
+        newTodo.appendChild(todoTitle);
+
+        const todoDescription = document.createElement("p");
+        todoDescription.classList.add("todo-description");
+        todoDescription.textContent = todo.description;
+        newTodo.appendChild(todoDescription);
+
+        const todoDueDate = document.createElement("p");
+        todoDueDate.classList.add("todo-duedate");
+        todoDueDate.textContent = todo.dueDate;
+        newTodo.appendChild(todoDueDate);
+
+        const todoPriority = document.createElement("p");
+        todoPriority.classList.add("todo-priority");
+        todoPriority.textContent = todo.priority;
+        newTodo.appendChild(todoPriority);
+
+        const deleteTodoButton = document.createElement('button');
+        deleteTodoButton.classList.add("delete-todo-button");
+        deleteTodoButton.textContent = "X";
+
+        newTodo.appendChild(deleteTodoButton);
+    });
+};

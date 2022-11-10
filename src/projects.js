@@ -20,6 +20,10 @@ export function getProjects() {
     return myProjects;
 }
 
+export function getTodos(selectedProject) {
+    return selectedProject.todos;
+}
+
 export function getSelectedProjectId() {
     return selectedProjectId;
 }
@@ -32,6 +36,17 @@ export function createProject() {
     myProjects.push(newProject);
     saveAndRender();
     resetProjectForm();
+}
+
+export function addTodoToProject(todo) {
+    const selectedProject = myProjects.find(project => project.id === selectedProjectId);
+    selectedProject.todos.push(todo);
+}
+
+export function deleteTodoFromProject(todoId) {
+    const selectedProject = myProjects.find(project => project.id === selectedProjectId);
+    selectedProject.todos = selectedProject.todos.filter(todo => todo.id !== todoId);
+    saveAndRender();
 }
 
 export function deleteProject(projectId) {
@@ -48,4 +63,4 @@ export function noSelectedProject() {
     selectedProjectId = null;
 }
 
-
+    
