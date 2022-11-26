@@ -1,4 +1,4 @@
-import { displayProjectForm, displayTaskForm, render, resetProjectForm, resetTodoForm } from './dom';
+import { displayProjectForm, displayTodoForm, render, resetProjectForm, resetTodoForm } from './dom';
 import { changeSelectedProject, createProject, deleteProject, deleteTodoFromProject, getSelectedProjectId, noSelectedProject } from './projects';
 import { addTodo } from './todos';
 
@@ -31,7 +31,7 @@ const eventListeners = (() => {
     });
   
     const createTodoButton = document.querySelector(".create-todo-button");
-    createTodoButton.addEventListener("click", displayTaskForm);
+    createTodoButton.addEventListener("click", displayTodoForm);
 
     const cancelTodoButton = document.querySelector(".cancel-todo-button");
     cancelTodoButton.addEventListener("click", resetTodoForm);
@@ -47,10 +47,20 @@ const eventListeners = (() => {
         if (e.target.classList.contains("delete-todo-button")) {
             deleteTodoFromProject(e.target.parentElement.dataset.todoId);
         }
+
+        else if (e.target.classList.contains("edit-todo-button")) {
+            displayTodoForm();
+            document.querySelector('#title').value = e.target.parentElement.firstChild.textContent;
+            document.querySelector('#description').value = e.target.parentElement.item[1].textContent;
+            // const description = document.querySelector('#description').value;
+            // const dueDate = document.querySelector('#duedate').value;
+            // const priority = document.querySelector('#priority').value;
+            // editTodo(e.target.parentElement.dataset.todoId);
+        }
     });
 
     
-    const editTodoButton = document.querySelectorAll(".edit-todo-button");
+    // const editTodoButton = document.querySelectorAll(".edit-todo-button");
 })();
 
 render();

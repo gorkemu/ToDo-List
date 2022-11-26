@@ -4,51 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/style.css">
     <title>To-Do List</title>
 </head>
 <body>
     <div id="content">
-        <div class="projects"> 
-            <h2>Projects</h2>
-            <div id="projects-list">
-
+        <div class="projects-container">
+            <div class="project-wrapper">
+                <div class="projects">
+                    <h2 class="header-projects">Projects</h2>
+                    <div id="projects-list">
+                        </div>
                 </div>
-        </div>
-        <div class="form-project">
-            <button class="create-project-button">+</button>
-            <div id="new-project-form-container" style="display: none">
-                <form id="new-project-form">
-                    <label for="project-name">Name</label>
-                    <input type="text" name="project-name" id="project-name-input">
-                    <button type="submit" class="add-project-button">Add</button>
-                    <button type="reset" class="cancel-project-button">Cancel</button>
-                </form>
+                <div class="form-project">
+                    <button class="create-project-button">Add Project</button>
+                    <div id="new-project-form-container" style="display: none">
+                        <form id="new-project-form">
+                            <label for="project-name">Name</label>
+                            <input type="text" name="project-name" id="project-name-input">
+                            <button type="submit" class="add-project-button">Add</button>
+                            <button type="reset" class="cancel-project-button">Cancel</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="todos-container">
-            <h3 class="project-header"></h3>
-            <div id="todos-list">
-
-                </div>
-            <div class="form-todo">
-                <button class="create-todo-button">+</button>
-                <div id="add-todo-form-container" style="display: none">
-                    <form id="add-todo-form">
-                        <label for="title">Title</label>
-                        <input type="text" name="title" id="title">
-                        <label for="description">Description:</label>
-                        <input type="text" name="description" id="description">
-                        <label for="duedate">Due Date:</label>
-                        <input type="date" name="dueDate" id="duedate">
-                        <label for="priority">Priority:</label>
-                        <select name="priority" id="priority">
-                            <option value="High">High</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Low">Low</option>
-                        </select>
-                        <button type="submit" class="add-todo-button">Add</button>
-                        <button type="reset" class="cancel-todo-button">Cancel</button>
-                    </form>
+            <div class="todos-wrapper">
+                <h3 class="project-header"></h3>
+                <div id="todos-list">
+                    </div>
+                <div class="form-todo">
+                    <button class="create-todo-button">Add Todo</button>
+                    <div id="add-todo-form-container" style="display: none">
+                        <form id="add-todo-form">
+                            <div id="title-wrapper">
+                                <label for="title">Title</label>
+                                <input type="text" name="title" id="title" required>
+                            </div>
+                            <div id="description-wrapper">
+                                <label for="description">Description:</label>
+                                <input type="text" name="description" id="description" required>
+                            </div>
+                            <div id="duedate-wrapper">
+                                <label for="duedate">Due Date:</label>
+                                <input type="date" name="dueDate" id="duedate" required>
+                            </div>
+                            <div id="priority-wrapper">
+                                <label for="priority">Priority:</label>
+                                <select name="priority" id="priority" required>
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low">Low</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="add-todo-button">Add</button>
+                            <button type="reset" class="cancel-todo-button">Cancel</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -5,9 +5,10 @@ const todosContainer = document.querySelector('.todos-container');
 const projectHeader = document.querySelector('.project-header');
 const todosList = document.querySelector('#todos-list');
 
-export function displayTaskForm() {
+export function displayTodoForm() {
     document.getElementById("add-todo-form-container").style.display = '';
 }
+
 export function resetTodoForm() {
     document.getElementById("add-todo-form").reset();
     document.getElementById("add-todo-form-container").style.display = 'none';
@@ -74,6 +75,7 @@ export function renderTodos(selectedProject) {
         newTodo.classList.add("new-todo");
         todosList.appendChild(newTodo);
 
+        
         const todoTitle = document.createElement("p");
         todoTitle.classList.add("todo-title");
         todoTitle.textContent = todo.title;
@@ -93,11 +95,15 @@ export function renderTodos(selectedProject) {
         todoPriority.classList.add("todo-priority");
         todoPriority.textContent = todo.priority;
         newTodo.appendChild(todoPriority);
-
+        
         const deleteTodoButton = document.createElement('button');
         deleteTodoButton.classList.add("delete-todo-button");
-        deleteTodoButton.textContent = "X";
-
+        deleteTodoButton.textContent = "Mark As Complete / Delete";
         newTodo.appendChild(deleteTodoButton);
+        
+        // const editTodoButton = document.createElement('button');
+        // editTodoButton.classList.add("edit-todo-button");
+        // editTodoButton.textContent = "Edit";
+        // newTodo.appendChild(editTodoButton);
     });
 };
