@@ -47,20 +47,7 @@ const eventListeners = (() => {
         if (e.target.classList.contains("delete-todo-button")) {
             deleteTodoFromProject(e.target.parentElement.dataset.todoId);
         }
-
-        else if (e.target.classList.contains("edit-todo-button")) {
-            displayTodoForm();
-            document.querySelector('#title').value = e.target.parentElement.firstChild.textContent;
-            document.querySelector('#description').value = e.target.parentElement.item[1].textContent;
-            // const description = document.querySelector('#description').value;
-            // const dueDate = document.querySelector('#duedate').value;
-            // const priority = document.querySelector('#priority').value;
-            // editTodo(e.target.parentElement.dataset.todoId);
-        }
     });
-
-    
-    // const editTodoButton = document.querySelectorAll(".edit-todo-button");
 })();
 
 render();
