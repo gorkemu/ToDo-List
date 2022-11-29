@@ -75,7 +75,6 @@ export function renderTodos(selectedProject) {
         newTodo.classList.add("new-todo");
         todosList.appendChild(newTodo);
 
-        
         const todoTitle = document.createElement("p");
         todoTitle.classList.add("todo-title");
         todoTitle.textContent = todo.title;
@@ -100,10 +99,5 @@ export function renderTodos(selectedProject) {
         deleteTodoButton.classList.add("delete-todo-button");
         deleteTodoButton.textContent = "Mark As Complete / Delete";
         newTodo.appendChild(deleteTodoButton);
-        
-        // const editTodoButton = document.createElement('button');
-        // editTodoButton.classList.add("edit-todo-button");
-        // editTodoButton.textContent = "Edit";
-        // newTodo.appendChild(editTodoButton);
     });
 };

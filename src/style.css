@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 
 :root {
-  --blackish: #181818;
+  --blackish: #222831;
   --brownish: #5b3317;
   --grayish: #999999;
   --greenish: #04AA6D;
   --reddish: #ff0021;
-  --light-beige: #F4F1EA;
-  --light-gray: #eee;
+  --blueish: #00ADB5;
+  --dark-gray: #393E46;
+  --whiteish: #EEEEEE;
 }
 
 *,
@@ -25,7 +27,8 @@ body {
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Nunito", sans-serif;
+  color: var(--blackish);
 }
 
 #content {
@@ -34,11 +37,11 @@ body {
 }
 
 .projects-container {
-    flex: 1 0 20%;
+    flex: 0 0 20%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #04AA6D;
+    background-color: var(--blueish);
 }
 
 .project-wrapper {
@@ -48,7 +51,7 @@ body {
 
 #projects-list {
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .header-projects {
@@ -67,8 +70,7 @@ body {
 }
 
 .project-name:hover {
-background-color: var(--grayish);
-
+background-color: var(--whiteish);
 }
 
 .create-project-button {
@@ -76,36 +78,33 @@ background-color: var(--grayish);
 }
 
 .selected-project {
-background-color: var(--grayish);
+background-color: var(--whiteish);
 }
 
 .todos-container {
-    flex: 1 0 80%;
-    display: flex;
-    flex-direction: column;
-
+  flex: 1 0 80%;
+  display: flex;
+  flex-direction: column;
 }
 
 #todos-list {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .new-todo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 0;
-    gap: 4px;
-    border-bottom: 1px solid var(--grayish);
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 0;
+  gap: 4px;
+  border-bottom: 1px solid var(--grayish);
 }
 
 .todos-wrapper {
-    width: 50%;
-    align-self: center;
+  width: 50%;
+  align-self: center;
 }
-
 
 .create-todo-button {
   margin: 20px 0;
@@ -136,4 +135,83 @@ background-color: var(--grayish);
 
 #description-wrapper {
   width: 100%;  
+}
+
+.create-button {
+  width: 90px;
+  height: 30px;
+  font-size: 12px;
+  border-radius: 8px;
+  background-color: var(--whiteish);
+  color: var(--dark-gray);
+  cursor: pointer;
+}
+
+.delete-project-button {
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  background-color: var(--whiteish);
+  color: var(--dark-gray);
+  cursor: pointer;
+}
+
+#project-name-input {
+  width: 90%;
+}
+
+.add-project-button,
+.cancel-project-button {
+  font-size: 12px;
+  background-color: var(--whiteish);
+  color: var(--dark-gray);
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+#new-project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#add-todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 60%;
+}
+
+.add-todo-button,
+.cancel-todo-button {
+  font-size: 12px;
+  background-color: var(--whiteish);
+  color: var(--dark-gray);
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.delete-todo-button {
+  font-size: 10px;
+  background-color: var(--whiteish);
+  color: var(--dark-gray);
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+#title-wrapper,
+#description-wrapper,
+#duedate-wrapper,
+#priority-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-buttons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
 }
