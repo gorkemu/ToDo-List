@@ -4,11 +4,12 @@
 :root {
   --blackish: #222831;
   --brownish: #5b3317;
-  --grayish: #999999;
+  --grayish: #b8b6b6;
   --greenish: #04AA6D;
   --reddish: #ff0021;
   --blueish: #00ADB5;
   --dark-gray: #393E46;
+  --light-gray: #d8d4d4;
   --whiteish: #EEEEEE;
 }
 
@@ -32,16 +33,18 @@ body {
 }
 
 #content {
-    display: flex;
-    height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  height: 100%;
 }
 
 .projects-container {
-    flex: 0 0 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: var(--blueish);
+  flex: 0 0 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--blueish);
+  height: 100%;
 }
 
 .project-wrapper {
@@ -85,6 +88,7 @@ background-color: var(--whiteish);
   flex: 1 0 80%;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 #todos-list {
@@ -156,6 +160,11 @@ background-color: var(--whiteish);
   cursor: pointer;
 }
 
+.delete-project-button:hover {
+  font-size: 14px;
+  border-width: 2.5px;
+}
+
 #project-name-input {
   width: 90%;
 }
@@ -214,4 +223,8 @@ background-color: var(--whiteish);
   display: flex;
   justify-content: flex-end;
   gap: 8px;
+}
+
+button:hover {
+  background-color: var(--light-gray);
 }
