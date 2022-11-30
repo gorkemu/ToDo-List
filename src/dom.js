@@ -73,31 +73,44 @@ export function renderTodos(selectedProject) {
         const newTodo = document.createElement("div");
         newTodo.dataset.todoId = todo.id;
         newTodo.classList.add("new-todo");
-        todosList.appendChild(newTodo);
+        todosList.appendChild(newTodo); 
 
+        const iconsWrapper = document.createElement("div");
+        iconsWrapper.classList.add("icons-wrapper");
+        newTodo.appendChild(iconsWrapper);
+
+
+        const todoPriorityIcon = document.createElement("i");
+        todoPriorityIcon.classList.add("fa-solid");
+        todoPriorityIcon.classList.add("fa-flag");
+        todoPriorityIcon.classList.add(todo.priority.toLowerCase());
+        iconsWrapper.appendChild(todoPriorityIcon);
+
+        const deleteTodoButton = document.createElement("i");
+        deleteTodoButton.classList.add("delete-todo-button");
+        deleteTodoButton.classList.add("fa-solid");
+        deleteTodoButton.classList.add("fa-trash-can");
+        iconsWrapper.appendChild(deleteTodoButton);
+
+        const todoWrapper = document.createElement('div');
+        todoWrapper.classList.add("new-todo-wrapper");
+        newTodo.appendChild(todoWrapper);
+
+        
         const todoTitle = document.createElement("p");
         todoTitle.classList.add("todo-title");
         todoTitle.textContent = todo.title;
-        newTodo.appendChild(todoTitle);
+        todoWrapper.appendChild(todoTitle);
 
         const todoDescription = document.createElement("p");
         todoDescription.classList.add("todo-description");
         todoDescription.textContent = todo.description;
-        newTodo.appendChild(todoDescription);
+        todoWrapper.appendChild(todoDescription);
 
         const todoDueDate = document.createElement("p");
         todoDueDate.classList.add("todo-duedate");
         todoDueDate.textContent = todo.dueDate;
-        newTodo.appendChild(todoDueDate);
+        todoWrapper.appendChild(todoDueDate);
 
-        const todoPriority = document.createElement("p");
-        todoPriority.classList.add("todo-priority");
-        todoPriority.textContent = todo.priority;
-        newTodo.appendChild(todoPriority);
-        
-        const deleteTodoButton = document.createElement('button');
-        deleteTodoButton.classList.add("delete-todo-button");
-        deleteTodoButton.textContent = "Mark As Complete / Delete";
-        newTodo.appendChild(deleteTodoButton);
     });
 };

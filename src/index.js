@@ -45,7 +45,7 @@ const eventListeners = (() => {
     const todosContainer = document. querySelector("#todos-list");
     todosContainer.addEventListener('click', e => {
         if (e.target.classList.contains("delete-todo-button")) {
-            deleteTodoFromProject(e.target.parentElement.dataset.todoId);
+            deleteTodoFromProject(e.target.parentElement.parentElement.dataset.todoId);
         }
     });
 })();

@@ -11,6 +11,9 @@
   --dark-gray: #393E46;
   --light-gray: #d8d4d4;
   --whiteish: #EEEEEE;
+  --high-priority: #d1453b;
+  --medium-priority: #eb8909;
+  --low-priority: #246fe0;
 }
 
 *,
@@ -94,15 +97,22 @@ background-color: var(--whiteish);
 #todos-list {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
 .new-todo {
   display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px solid var(--grayish);
+  padding: 8px 0;
+}
+
+.new-todo-wrapper {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20px 0;
-  gap: 4px;
-  border-bottom: 1px solid var(--grayish);
 }
 
 .todos-wrapper {
@@ -202,15 +212,6 @@ background-color: var(--whiteish);
   padding: 4px 8px;
 }
 
-.delete-todo-button {
-  font-size: 10px;
-  background-color: var(--whiteish);
-  color: var(--dark-gray);
-  cursor: pointer;
-  border-radius: 8px;
-  padding: 4px 8px;
-}
-
 #title-wrapper,
 #description-wrapper,
 #duedate-wrapper,
@@ -228,3 +229,36 @@ background-color: var(--whiteish);
 button:hover {
   background-color: var(--light-gray);
 }
+
+.high {
+  color: var(--high-priority);
+}
+
+.medium {
+  color: var(--medium-priority);
+}
+
+.low {
+  color: var(--low-priority);
+}
+
+.fa-flag {
+  position: relative;
+  top: 5px;
+}
+
+.icons-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fa-trash-can {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.fa-trash-can:hover {
+  opacity: 0.7;
+}
+
