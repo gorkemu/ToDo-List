@@ -40,9 +40,17 @@ export function renderProjects() {
             projectElement.classList.add("selected-project")
         }
 
-        const deleteProjectButton = document.createElement('button');
+        // const deleteProjectButton = document.createElement('button');
+        // deleteProjectButton.classList.add("delete-project-button");
+        // deleteProjectButton.textContent = "X";
+
+        const deleteProjectButton = document.createElement('i');
         deleteProjectButton.classList.add("delete-project-button");
-        deleteProjectButton.textContent = "X";
+        deleteProjectButton.classList.add("fa-solid");
+        deleteProjectButton.classList.add("fa-xmark");
+
+
+
 
         projectElement.appendChild(deleteProjectButton);
         projectsContainer.appendChild(projectElement);
@@ -121,6 +129,7 @@ export function renderTodos(selectedProject) {
         else {
             todoDueDate.textContent = format(parseISO(todo.dueDate), "d MMM");
         }
+        
 
         todoWrapper.appendChild(todoDueDate);
 
