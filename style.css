@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+:root {
+  --blackish: #222831;
+  --brownish: #5b3317;
+  --grayish: #b8b6b6;
+  --greenish: #04AA6D;
+  --reddish: #ff0021;
+  --blueish: #00ADB5;
+  --dark-gray: #393E46;
+  --light-gray: #d8d4d4;
+  --whiteish: #EEEEEE;
+  --high-priority: #d1453b;
+  --medium-priority: #eb8909;
+  --low-priority: #246fe0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: var(--blackish);
+}
+
+
+#content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  height: 100%;
+}
+
+.projects-container {
+  flex: 0 0 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--blueish);
+  height: 100%;
+}
+
+.project-wrapper {
+  width: 80%;
+  align-self: center;
+}
+
+#projects-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-projects {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--grayish);
+}
+
+.project-name {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid var(--grayish);
+  display: flex;
+  justify-content: space-between; 
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.project-name:hover {
+background-color: var(--whiteish);
+}
+
+.create-project-button {
+  margin: 20px 0;
+}
+
+.selected-project {
+background-color: var(--whiteish);
+}
+
+.todos-container {
+  flex: 1 0 80%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#todos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.new-todo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px solid var(--grayish);
+  padding: 8px 0;
+}
+
+.new-todo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.todos-wrapper {
+  width: 50%;
+  align-self: center;
+}
+
+.create-todo-button {
+  margin: 20px 0;
+}
+
+.project-header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--grayish);
+}
+
+.todo-title {
+  font-size: 16px;
+}
+
+.todo-description {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.todo-duedate {
+  font-size: 12px;
+  color: var(--reddish);
+}
+
+.todo-priority {
+  font-size: 12px;
+  color: var(--greenish);
+}
+
+#description-wrapper {
+  width: 100%;  
+}
+
+.create-button {
+  width: 90px;
+  height: 30px;
+  font-size: 12px;
+  border-radius: 8px;
+  background-color: var(--whiteish);
+  color: var(--dark-gray);
+  cursor: pointer;
+}
+
+.delete-project-button {
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  color: var(--dark-gray);
+  cursor: pointer;
+}
+
+.delete-project-button:hover {
+  font-size: 14px;
+}
+
+#project-name-input {
+  width: 90%;
+}
+
+.add-project-button,
+.cancel-project-button {
+  font-size: 12px;
+  background-color: var(--whiteish);
+  color: var(--dark-gray);
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+#new-project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#add-todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 60%;
+  font-size: 12px;
+}
+
+.add-todo-button,
+.cancel-todo-button {
+  font-size: 12px;
+  background-color: var(--whiteish);
+  color: var(--dark-gray);
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+#title-wrapper,
+#description-wrapper,
+#duedate-wrapper,
+#priority-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-buttons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+button:hover {
+  background-color: var(--light-gray);
+}
+
+.high {
+  color: var(--high-priority);
+}
+
+.medium {
+  color: var(--medium-priority);
+}
+
+.low {
+  color: var(--low-priority);
+}
+
+.fa-flag {
+  position: relative;
+  top: 5px;
+}
+
+.icons-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fa-trash-can {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.fa-trash-can:hover {
+  opacity: 0.7;
+}
+
+
