@@ -40,17 +40,10 @@ export function renderProjects() {
             projectElement.classList.add("selected-project")
         }
 
-        // const deleteProjectButton = document.createElement('button');
-        // deleteProjectButton.classList.add("delete-project-button");
-        // deleteProjectButton.textContent = "X";
-
         const deleteProjectButton = document.createElement('i');
         deleteProjectButton.classList.add("delete-project-button");
         deleteProjectButton.classList.add("fa-solid");
         deleteProjectButton.classList.add("fa-xmark");
-
-
-
 
         projectElement.appendChild(deleteProjectButton);
         projectsContainer.appendChild(projectElement);
@@ -88,7 +81,6 @@ export function renderTodos(selectedProject) {
         iconsWrapper.classList.add("icons-wrapper");
         newTodo.appendChild(iconsWrapper);
 
-
         const todoPriorityIcon = document.createElement("i");
         todoPriorityIcon.classList.add("fa-solid");
         todoPriorityIcon.classList.add("fa-flag");
@@ -105,7 +97,6 @@ export function renderTodos(selectedProject) {
         todoWrapper.classList.add("new-todo-wrapper");
         newTodo.appendChild(todoWrapper);
 
-        
         const todoTitle = document.createElement("p");
         todoTitle.classList.add("todo-title");
         todoTitle.textContent = todo.title;
@@ -130,8 +121,6 @@ export function renderTodos(selectedProject) {
             todoDueDate.textContent = format(parseISO(todo.dueDate), "d MMM");
         }
         
-
         todoWrapper.appendChild(todoDueDate);
-
     });
 };

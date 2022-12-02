@@ -62,5 +62,3 @@ export function changeSelectedProject(projectId) {
 export function noSelectedProject() {
     selectedProjectId = null;
 }
-
-    
