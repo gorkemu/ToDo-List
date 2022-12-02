@@ -1,4 +1,5 @@
 import { getProjects, getSelectedProjectId, getTodos, save } from "./projects";
+import { isToday, isTomorrow, format, parseISO } from 'date-fns';
 
 const projectsContainer = document.querySelector('#projects-list');
 const todosContainer = document.querySelector('.todos-container');
@@ -109,7 +110,18 @@ export function renderTodos(selectedProject) {
 
         const todoDueDate = document.createElement("p");
         todoDueDate.classList.add("todo-duedate");
-        todoDueDate.textContent = todo.dueDate;
+        if (isToday(parseISO(todo.dueDate))) {
+            todoDueDate.textContent = "Today";
+        }
+
+        else if (isTomorrow(parseISO(todo.dueDate))) {
+            todoDueDate.textContent = "Tomorrow";
+        }
+
+        else {
+            todoDueDate.textContent = format(parseISO(todo.dueDate), "d MMM");
+        }
+
         todoWrapper.appendChild(todoDueDate);
 
     });
