@@ -1,19 +1,15 @@
 import { resetTodoForm, saveAndRender } from "./dom";
 import {
   addTodoToProject,
-  getProjects,
-  getSelectedProjectId,
 } from "./projects";
 
-const todo = (title, description, dueDate, priority) => {
-  return {
+const todo = (title, description, dueDate, priority) => ({
     id: Date.now().toString(),
-    title: title,
-    description: description,
-    dueDate: dueDate,
-    priority: priority,
-  };
-};
+    title,
+    description,
+    dueDate,
+    priority,
+  });
 
 export function addTodo() {
   const title = document.querySelector("#title").value;

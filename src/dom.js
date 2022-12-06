@@ -54,27 +54,6 @@ export function renderProjects() {
   });
 }
 
-export function render() {
-  clearElement(projectsContainer);
-  renderProjects();
-  const selectedProject = getProjects().find(
-    (project) => project.id === getSelectedProjectId(),
-  );
-  if (!selectedProject) {
-    todosContainer.style.display = 'none';
-  } else {
-    todosContainer.style.display = '';
-    projectHeader.textContent = selectedProject.name;
-    clearElement(todosList);
-    renderTodos(selectedProject);
-  }
-}
-
-export function saveAndRender() {
-  save();
-  render();
-}
-
 export function renderTodos(selectedProject) {
   getTodos(selectedProject).forEach((todo) => {
     const newTodo = document.createElement('div');
@@ -85,7 +64,6 @@ export function renderTodos(selectedProject) {
     const iconsWrapper = document.createElement('div');
     iconsWrapper.classList.add('icons-wrapper');
     newTodo.appendChild(iconsWrapper);
-
     
     const todoPriorityIcon = document.createElement("i");
     todoPriorityIcon.classList.add("fa-solid");
@@ -93,7 +71,6 @@ export function renderTodos(selectedProject) {
     todoPriorityIcon.classList.add(todo.priority.toLowerCase());
     iconsWrapper.appendChild(todoPriorityIcon);
   
-
     const deleteTodoButton = document.createElement('i');
     deleteTodoButton.classList.add('delete-todo-button');
     deleteTodoButton.classList.add('fa-solid');
@@ -130,3 +107,26 @@ export function renderTodos(selectedProject) {
     }
   });
 }
+
+export function render() {
+  clearElement(projectsContainer);
+  renderProjects();
+  const selectedProject = getProjects().find(
+    (project) => project.id === getSelectedProjectId(),
+  );
+  if (!selectedProject) {
+    todosContainer.style.display = 'none';
+  } else {
+    todosContainer.style.display = '';
+    projectHeader.textContent = selectedProject.name;
+    clearElement(todosList);
+    renderTodos(selectedProject);
+  }
+}
+
+export function saveAndRender() {
+  save();
+  render();
+}
+
+
