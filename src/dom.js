@@ -11,7 +11,9 @@ const projectHeader = document.querySelector('.project-header');
 const todosList = document.querySelector('#todos-list');
 
 export function displayTodoForm() {
-  document.getElementById('add-todo-form-container').style.display = '';
+  document.getElementById('add-todo-form-container').style.display = ''
+  const titleField = document.querySelector('#title');
+  titleField.focus();
 }
 
 export function resetTodoForm() {
@@ -21,6 +23,8 @@ export function resetTodoForm() {
 
 export function displayProjectForm() {
   document.getElementById('new-project-form-container').style.display = '';
+  const inputField = document.querySelector('#project-name-input');
+  inputField.focus();
 }
 
 export function resetProjectForm() {
