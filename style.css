@@ -171,18 +171,18 @@ body {
 }
 
 .delete-project-button {
-  width: 20px;
-  height: 20px;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--dark-gray);
   cursor: pointer;
-  top: 13px;
-  right: 0;
+  top: 20%;
+  right: 8px;
+  border-radius: 5px;
+  padding: 6px;
   position: absolute;
 }
 
 .delete-project-button:hover {
-  font-size: 16px;
+  background-color: var(--light-gray);
 }
 
 #project-name-input {
