@@ -52,6 +52,7 @@ export function renderProjects() {
     deleteProjectButton.classList.add('delete-project-button');
     deleteProjectButton.classList.add('fa-solid');
     deleteProjectButton.classList.add('fa-xmark');
+    deleteProjectButton.setAttribute('title', 'Delete Project');
 
     projectElement.appendChild(deleteProjectButton);
     projectsContainer.appendChild(projectElement);
@@ -73,12 +74,14 @@ export function renderTodos(selectedProject) {
     todoPriorityIcon.classList.add("fa-solid");
     todoPriorityIcon.classList.add("fa-flag");
     todoPriorityIcon.classList.add(todo.priority.toLowerCase());
+    todoPriorityIcon.setAttribute('title', `${todo.priority} priority`);  
     iconsWrapper.appendChild(todoPriorityIcon);
   
     const deleteTodoButton = document.createElement('i');
     deleteTodoButton.classList.add('delete-todo-button');
     deleteTodoButton.classList.add('fa-solid');
     deleteTodoButton.classList.add('fa-trash-can');
+    deleteTodoButton.setAttribute('title', 'Delete Todo');
     iconsWrapper.appendChild(deleteTodoButton);
 
     const todoWrapper = document.createElement('div');
