@@ -86,6 +86,14 @@ body {
   background-color: var(--whiteish);
 }
 
+.project-name .delete-project-button{
+  visibility: hidden;
+}
+
+.project-name:hover .delete-project-button{
+  visibility: visible;
+}
+
 .todos-container {
   flex: 1 0 80%;
   display: flex;
@@ -164,13 +172,13 @@ body {
 .delete-project-button {
   width: 20px;
   height: 20px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--dark-gray);
   cursor: pointer;
 }
 
 .delete-project-button:hover {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 #project-name-input {
@@ -267,4 +275,12 @@ button:hover {
 
 .fa-trash-can:hover {
   color: var(--reddish);
+}
+
+.new-todo .fa-trash-can {
+  visibility: hidden;
+}
+
+.new-todo:hover .fa-trash-can{
+  visibility: visible;
 }
